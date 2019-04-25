@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Content{% endblock %}
+
+{% block content %}
+    <h1>Content</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ content.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ content.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ content.description }}</td>
+            </tr>
+            <tr>
+                <th>Content</th>
+                <td>{{ content.content }}</td>
+            </tr>
+            <tr>
+                <th>Status</th>
+                <td>{{ content.isActive==0 ? 'Pending' : (content.isActive==1 ? 'Approved'  : 'Rejected') }} </td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ content.email }}</td>
+            </tr>
+        </tbody>
+    </table>
+ {% if content.isActive==0 %}
+    {{ include('content/_approve_form.html.twig') }}
+    {% endif %}    
+{% endblock %}

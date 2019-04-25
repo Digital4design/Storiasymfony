@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    
+     {% if is_granted('ROLE_ADMIN') %}
+         
+         admin login
+          {% elseif(is_granted('ROLE_USER')) %}
+              user  login
+               {% endif %}
+               ---
+               {{app.user.roles[0]}}
+               {% if(app.user.roles[0]=='ROLE_ADMIN') %}
+               Adminnnn
+                 {% elseif(app.user.roles[0]=='ROLE_USER') %}
+              user  loginnn
+               {% endif %}
+               
+               ---
+               {{ dump(app.user.roles)  }}
+               
+{% endblock %}

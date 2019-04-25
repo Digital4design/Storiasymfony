@@ -1,0 +1,12 @@
+swiftmailer:
+  #  url: '%env(MAILER_URL)%'  
+    transport: smtp
+    auth_mode: login
+    host: smtp.mailgun.org
+    encryption: ssl
+    port: 465
+    username: postmaster@sandbox1cf1ac0fd81142cc9dc96988c855d39e.mailgun.org
+    password: 93e94a8789d326bdf0e36a7ce9aab7f0-dc5f81da-3b6c041a   
+
+
+  

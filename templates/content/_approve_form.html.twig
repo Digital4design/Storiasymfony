@@ -1,0 +1,5 @@
+<form method="post" action="{{ path('content_approve', {'id': content.id}) }}" onsubmit="return confirm('Are you sure you want to approve this item?');">
+    <input type="hidden" name="_method" value="POST">
+    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ content.id) }}">
+    <button class="btn">Approve</button>
+</form>
