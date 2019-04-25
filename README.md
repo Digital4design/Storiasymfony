@@ -4,11 +4,14 @@ http://localhost:83/
 
 
 
+Cron job path http://localhost:83/cronupdate set on server that run on every minute intervel to check post pending status. If the post is not appoved by admin within 5 minutes then it reject the post and send email to user.
 
-Set environment variables in .env; you'll need a db, a mailer and recaptcha keys. Then run
+Admin login details
+malwinder.d4d@gmail.com
+password : Admin@123
+ 
+Run  these migration to setup database on mysql
 
-	$ php bin/console doctrine:database:create
-	$ php bin/console doctrine:migrations:migrate
-	
-	
- npm run build"# Storiasymfony" 
+$ php bin/console doctrine:database:create
+$ php bin/console doctrine:migrations:migrate
+
