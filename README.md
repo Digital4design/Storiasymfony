@@ -13,7 +13,9 @@ password : Admin@123
 User login
 malwinder.d5d@gmail.com
 Pass: Admin@123
- 
+
+----------------------------
+
 Api List
 Login api POST
 http://localhost:83/api/login
@@ -39,7 +41,7 @@ http://localhost:83/api/show/{id}
 List approvded content GET 
 http://localhost:83/api/list
 
- 
+-----------------------------
  
 Run  these migration to setup database on mysql
 
