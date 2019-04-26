@@ -20,26 +20,7 @@ class SiteController extends AbstractController
      */
     function homepage()
     {
-
-        $session = new Session();
-
-        $session->getFlashBag()->add('notice', 'Profile updated');
-
-//        die('www');
-//        $user = $this->getUser();
-//       print_r($user);
-//        $roles = $user->getRoles();
-//        print_r($roles);
-    //    die('--w--');
-     //   var_dump($user->hasRole('ROLE_ADMIN'));
-       // die('--');
-   
-     // var_dump(is_granted('ROLE_USER'));
-       // die('checked');
-        
-// $data = $this->get('session')->get(Security::LAST_USERNAME);
-//  $data = $this->get('session')->get('is_admin');
-//            
+           
         return $this->render('index.html.twig');
     }
     
