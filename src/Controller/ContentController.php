@@ -125,27 +125,26 @@ class ContentController extends Controller
     {
         if ($this->isCsrfTokenValid('delete'.$content->getId(), $request->request->get('_token'))) {
             
-               $post_title = $content->getTitle();
-               $usermail = $content->getEmail();
-
-                $message = (new \Swift_Message('Post Approved'))
-                ->setFrom('malwinder.d4d@gmail.com')
-                ->setTo($usermail)
-                ->setBody(
-                    $this->renderView(
-                        'emails/approved.html.twig',
-                        ['name' => $usermail,'postname' => $post_title,]
-                    ),
-                    'text/html'
-                );
-                
-                
-                 $result =  $mailer->send($message);       
+            $post_title = $content->getTitle();
+            $usermail = $content->getEmail();
             
             $entityManager = $this->getDoctrine()->getManager();
             $content->setIsActive(1);
             $entityManager->persist($content);
-            $entityManager->flush();
+            $entityManager->flush();            
+
+             $message = (new \Swift_Message('Post Approved'))
+             ->setFrom('malwinder.d4d@gmail.com')
+             ->setTo($usermail)
+             ->setBody(
+                 $this->renderView(
+                     'emails/approved.html.twig',
+                     ['name' => $usermail,'postname' => $post_title,]
+                 ),
+                 'text/html'
+             );
+
+            $result =  $mailer->send($message);       
         }
 
         return $this->redirectToRoute('content_index');

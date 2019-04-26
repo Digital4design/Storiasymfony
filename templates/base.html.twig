@@ -82,9 +82,15 @@
                <div class="col-sm-2 sidenav">
                   <nav id="sidebar">
                      <ul>
+                          {% if(is_granted('ROLE_USER')) %}
                         <li><a href="{{ path('homepage') }}" > Dashboard</a> </li>
+                         {% endif %}
+                         {% if is_granted('ROLE_ADMIN') %}
                         <li><a href="{{ path('content_index') }}" > Post List</a> </li>
+                        {% endif %}
+                           {% if(is_granted('ROLE_USER')) %}
                         <li><a href="{{ path('content_new') }}" > Create Post</a> </li>
+                          {% endif %}
                         <li><a href="{{ path('content_list') }}" > List Content JSON</a> </li>
                      </ul>
                   </nav>

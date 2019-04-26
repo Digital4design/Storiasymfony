@@ -20,12 +20,11 @@ class SecurityController extends AbstractController
      * @return Response
      */
     public function login(AuthenticationUtils $authenticationUtils)
-    {
+    {        
         if ($this->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
             return $this->redirect($this->generateUrl('homepage'));
         }
-		
-
+	
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
 

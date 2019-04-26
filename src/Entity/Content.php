@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ContentRepository")
@@ -28,7 +29,7 @@ class Content
     private $description;
 
     /**
-     * @ORM\Column(type="string", length=244, nullable=true)
+     * @ORM\Column(type="string", length=244, nullable=false)
      */
     private $content;
 
@@ -52,6 +53,7 @@ class Content
     
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Email()
      */
     private $email;
 
